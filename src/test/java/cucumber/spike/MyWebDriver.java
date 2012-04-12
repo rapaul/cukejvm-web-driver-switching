@@ -14,9 +14,9 @@ public class MyWebDriver extends EventFiringWebDriver {
 
     public MyWebDriver() throws MalformedURLException {
         super(
-        		System.getProperty("selenium.grid") == null 
-        			? new FirefoxDriver()
-        			: new RemoteWebDriver(new URL(System.getProperty("selenium.grid")), DesiredCapabilities.firefox()));
+                System.getProperty("selenium.grid") == null
+                    ? new FirefoxDriver()
+                    : new RemoteWebDriver(new URL(System.getProperty("selenium.grid")), DesiredCapabilities.firefox()));
     }
 
     @After

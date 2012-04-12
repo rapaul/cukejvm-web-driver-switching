@@ -14,26 +14,26 @@ public class SpikeStepDefs {
 
     @Given("I am running Cucumber on my local machine")
     public void localMachine() {
-    	if (System.getProperty("selenium.grid") != null) {
-    		throw new IllegalStateException("We are trying to test local, but selenium.grid has been set");
-    	}
+        if (System.getProperty("selenium.grid") != null) {
+            throw new IllegalStateException("We are trying to test local, but selenium.grid has been set");
+        }
     }
     
     @Given("I am running Cucumber on my CI machine")
     public void ciMachine() {
-    	if (System.getProperty("selenium.grid") == null) {
-    		throw new IllegalStateException("We are trying to test remote, but selenium.grid has not been set");
-    	}
+        if (System.getProperty("selenium.grid") == null) {
+            throw new IllegalStateException("We are trying to test remote, but selenium.grid has not been set");
+        }
     }
     
     @When("I run browser based tests")
     public void runTests() {
-    	webDriver.navigate().to("http://www.google.com");
+        webDriver.navigate().to("http://www.google.com");
     }
     
     @Then("they should run with (.+)")
     public void runWith(String driverName) {
-    	assertThat(webDriver.toString(), containsString(driverName));
+        assertThat(webDriver.toString(), containsString(driverName));
     }
 
 
