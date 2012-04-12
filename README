@@ -1,0 +1,12 @@
+# Test local
+mvn test
+(the local scenario should pass, while the remote should fail)
+
+# Test Grid
+mvn test -Dselenium.grid=http://localhost:4444/web/hub/
+(the remote scenario should pass, while the local should fail)
+
+TODO
+=====
+If you haven't seen the constructor of MyWebDriver yet, its terrible.
+Ideally we'd be able to inject instances into PicoContainer based on an environment variable, greatly simplifying MyWebDriver. Instead of the great big if statement it would simply depdend on the instance of WebDriver preconfigured in PicoContainer.
